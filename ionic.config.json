@@ -1,0 +1,12 @@
+{
+  "name": "ocruzcarrillo-alia-tech-excersice",
+  "integrations": {
+    "cordova": {}
+  },
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ]
+}

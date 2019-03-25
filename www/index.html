@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="MainCtrl">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <div>
+			<img style="max-height:20px;" alt="NodeJs Logo" src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png">
+			<img style="max-height:20px;" alt="Angular Logo" src="https://angular.io/assets/images/logos/angular/angular.png">
+			<img style="max-height:20px;" alt="Ionic Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ionic_Logo.svg/2000px-Ionic_Logo.svg.png">
+			ISC Omar Cruz Carrillo - Alia Tech Excersice
+		  </div>
+      </ion-header-bar>
+      <ion-content>
+	  
+	  <h5>
+		Gym's CRUD <code>Cluster NodeJs, Angular 6 and Ionic (only feature delete)</code>
+	  </h5>
+
+<!--
+  This is the wrapper for the chat screen. The ng-show attribute tells
+  Angular to only show this div (and it's contents) if the "showChatScreen"
+  scope variable is set to True. This allows us to hide/show this screen
+  from our controller.
+-->
+<div ng-show="showGymsScreen" class="card">
+  <!--
+    This is the chat screen heading. The {{userName}} part simply prints
+    the "userName" scope variable.
+  -->
+  <div class="item item-divider">
+      Gym's
+  </div>
+  <button ng-show="showLoadButton" ng-click="sendMessage(message); message = ''" class="button button-small">
+	  Load Gym's
+  </button>
+  <div class="item item-text-wrap">
+      <div class="list">
+		  <ion-list id="gymLst">
+		  </ion-list>
+      </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="item item-divider">
+      Console
+  </div>
+  <div class="item item-text-wrap">
+      <div class="list">
+          <!-- Define the textarea which will be used to display the messages. -->
+          <label class="item item-input">
+              <textarea
+                id="messageLog"
+                ng-model="messageLog"
+                style="resize: none;"
+                rows="10"
+                readonly>
+              </textarea>
+          </label>
+      </div>
+  </div>
+</div>
+
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
